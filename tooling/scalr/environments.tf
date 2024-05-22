@@ -9,4 +9,6 @@ resource "scalr_workspace" "workspaces" {
     name            = each.value.name
     environment_id  = scalr_environment.environments[each.value.workspace].id
     auto_apply      = true
+
+    working_directory = each.value.path
 }
