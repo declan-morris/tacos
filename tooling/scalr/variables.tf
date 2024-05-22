@@ -48,3 +48,8 @@ variable "aws_secret_key" {
   description = "AWS secret key"
   sensitive = true
 }
+
+variable "organization" {
+  type = string
+  default = ""
+}

@@ -2,10 +2,16 @@
 terraform {
   backend "remote" {
     hostname = "dmorris.scalr.io"
+
+    # if we have this as dev/test/prod how are we supposed to provide this dynamically?
+    # do we have to use https://developer.hashicorp.com/terraform/language/settings/backends/remote#using-cli-input
+    # terraform init -backend-config=config.remote.tfbackend
+
     organization = "env-v0ocgk7bskoghdark"
 
     workspaces {
       name = "project-alpha"
+      # prefix = "project-alpha"
     }
   }
 }
