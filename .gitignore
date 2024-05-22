@@ -36,5 +36,3 @@ terraform.rc
 tooling/scalr/.envrc
 .envrc
 **/.envrc
-terraform/project-alpha/.envrc
-terraform/project-omega/.envrc
