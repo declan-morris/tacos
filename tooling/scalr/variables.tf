@@ -52,3 +52,7 @@ variable "organization" {
   type = string
   default = ""
 }
+
+variable "github_token" {
+  sensitive = true
+}
