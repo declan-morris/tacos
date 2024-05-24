@@ -14,7 +14,7 @@ resource "scalr_workspace" "workspaces" {
     for_each        = var.projects
     name            = each.value.name
     environment_id  = scalr_environment.environments[each.value.workspace].id
-    auto_apply      = true
+    auto_apply      = false
 
     working_directory = each.value.path
 
@@ -22,5 +22,9 @@ resource "scalr_workspace" "workspaces" {
     vcs_repo {
         identifier   = "declan-morris/tacos"
         branch       = "main"
+    }
+
+    provider_configuration {
+        id = scalr_provider_configuration.aws.id
     }
 }
