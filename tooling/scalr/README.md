@@ -53,6 +53,6 @@ scalr -verbose create-state-version \
 -state=$(base64 -w 0 -i terraform.tfstate) \
 -md5=$(md5sum terraform.tfstate | awk '{print $1;}') \
 -lineage=$(cat terraform.tfstate | jq -r '.lineage') \
--serial=$(cat terraform.tfstate | jq -r '.serial + 1') \
+-serial=$(cat terraform.tfstate | jq -r '.serial') \
 -workspace-id=<workspace_id>
 ```
