@@ -24,7 +24,12 @@ variable "projects" {
       name = "project-omega"
       path = "/terraform/project-omega"
       workspace = "dev"
-    }
+    },
+    "project-beta-prod" = {
+      name = "project-beta"
+      path = "/terraform/project-beta"
+      workspace = "prod"
+    },
   }
 }
 
