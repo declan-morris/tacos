@@ -13,17 +13,17 @@ module "ec2_instance" {
   }
 }
 
-module "test2" {
-  source = "terraform-aws-modules/ec2-instance/aws"
+# module "test2" {
+#   source = "terraform-aws-modules/ec2-instance/aws"
 
-  name = "single-instance"
+#   name = "single-instance"
 
-  instance_type = "t2.micro"
-  monitoring    = true
+#   instance_type = "t2.micro"
+#   monitoring    = true
 
-  tags = {
-    Terraform   = "true"
-    Environment = terraform.workspace
-    project     = "beta"
-  }
-}
+#   tags = {
+#     Terraform   = "true"
+#     Environment = terraform.workspace
+#     project     = "beta"
+#   }
+# }

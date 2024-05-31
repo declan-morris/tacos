@@ -1,5 +1,10 @@
 # Scalr
 
+## Todo 
+- [ ] Look at notifications
+- [ ] Configure drift detection schedule
+
+
 ## Points of interest
 
 scalr cannot accept terraform code/state files that are above 1.5.9. **This means we will have to understand the migration process for these particular projects.**
@@ -7,6 +12,9 @@ scalr cannot accept terraform code/state files that are above 1.5.9. **This mean
 Both VCS and cli driven workflows are supported by scalr.
 
 Getting very strange issue when destroying an environment after uploading the state.
+
+### Structure
+I think we need to create a module for the standard vsphere stuff, that's they typical and the workspace will need to be assigned providers
 
 ## Migration
 
