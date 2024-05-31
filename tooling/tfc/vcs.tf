@@ -5,5 +5,4 @@ resource "tfe_oauth_client" "github" {
   http_url            = "https://github.com"
   oauth_token         = var.github_token
   service_provider    = "github"
-  organization_scoped = true
 }
