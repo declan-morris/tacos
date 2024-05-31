@@ -22,3 +22,10 @@ resource "tfe_workspace" "workspaces" {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
   }
 }
+
+resource "tfe_workspace_variable_set" "test" {
+  for_each = tfe_workspace.workspaces
+
+  variable_set_id = tfe_variable_set.aws.id
+  workspace_id    = each.value.id
+}
