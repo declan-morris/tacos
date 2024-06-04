@@ -17,6 +17,7 @@ resource "scalr_workspace" "workspaces" {
     auto_apply      = false
 
     working_directory = each.value.path
+    trigger_patterns = each.value.path
 
     vcs_provider_id  = scalr_vcs_provider.github.id
     vcs_repo {
@@ -27,4 +28,11 @@ resource "scalr_workspace" "workspaces" {
     provider_configuration {
         id = scalr_provider_configuration.aws.id
     }
+}
+
+resource "scalr_workspace_run_schedule" "drift_detection" {
+  for_each = scalr_workspace.workspaces
+  workspace_id     = each.value.id
+  apply_schedule   = "25 13 * * *"
+  # apply_schedule   = "0 7 * * *"
 }

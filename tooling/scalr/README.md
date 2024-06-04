@@ -3,7 +3,11 @@
 ## Todo 
 - [ ] Look at notifications
 - [ ] Configure drift detection schedule
-
+- [ ] Is there autoscaling for the agent pool running in k8s?
+- [ ] Which apply errors do not count toward buget
+- [ ] What is the rule for cli driven workflows not counting against the budget?? https://docs.scalr.io/docs/faq#which-runs-do-not-count-against-billing
+  - [!] Runs that use local execution mode in the workspace - tested cli driven workflow, applied locally counted against runs
+- [ ] Confirm if module updates in downstream can kick off a plan on consumers
 
 ## Points of interest
 
