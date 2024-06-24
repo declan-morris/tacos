@@ -3,7 +3,7 @@ resource "spacelift_space" "environments" {
 
   parent_space_id = "root"
 
-  name = each.key
+  name        = each.key
   description = "It contains all the resources common to the ${each.key} infrastructure."
 }
 
@@ -12,6 +12,6 @@ resource "spacelift_space" "projects" {
 
   parent_space_id = spacelift_space.environments[each.value.workspace].id
 
-  name = each.value.name
+  name        = each.value.name
   description = "It contains all the resources common to the ${each.key} infrastructure."
 }
