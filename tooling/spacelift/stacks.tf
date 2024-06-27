@@ -18,3 +18,11 @@ resource "spacelift_stack" "projects" {
   # import_state      = "test.tfstate"
   # import_state_file = "test"
 }
+
+resource "spacelift_context_attachment" "aws_creds" {
+  for_each    = var.projects
+
+  context_id = spacelift_context.aws[each.value.workspace].id
+  stack_id   = spacelift_stack.projects[each.key].id
+  priority   = 0
+}
